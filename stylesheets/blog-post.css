@@ -1,0 +1,33 @@
+aside {
+	display: inline;
+	width: 30%;
+	float: right;
+}
+
+aside h1 {
+	text-align: center;
+}
+
+section {
+	display: inline;
+	width: 70%;
+	float: left;
+}
+
+section h1, h2 {
+	text-align: center;
+}
+
+section p {
+	display: block;
+	text-align: justify;
+	margin: 0;
+	padding: 0 20px 0 20px;
+}
+
+.profile-photo {
+	display: block;
+	margin: auto;
+	padding: 0;
+	width: 35%;
+}
