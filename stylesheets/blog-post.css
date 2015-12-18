@@ -1,5 +1,6 @@
 aside {
 	display: inline;
+	margin-top: 50px;
 	width: 30%;
 	float: right;
 }
@@ -17,6 +18,7 @@ aside p {
 
 section {
 	display: inline;
+	margin-top: 50px;
 	width: 70%;
 	float: left;
 }
