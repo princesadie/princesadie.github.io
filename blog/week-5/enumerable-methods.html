@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+      <meta charset="utf-8">
+  		<title>Slicing in Ruby with ".each_slice</title>
+      <meta name="description" content="Our first blog post">
+      <meta name="author" content="Prince and Peter">
+      <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="../../stylesheets/default.css">
+       <link rel="stylesheet" type="text/css" href="../../stylesheets/blog.css">
+       <link rel="stylesheet" type="text/css" href="../../stylesheets/blog-post.css">
+  </head>
+<body>
+    <nav>
+      <ul class="left-nav">
+        <li><a href="http://princesadie.github.io">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">PROJECTS</a></li>
+        <li><a href="#">RESUME</a></li>
+        <li><a href="http://princesadie.github.io/blog/index.html">BLOG</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+      <ul class="right-nav">
+        <li><a href="https://facebook.com/prince.sadie">FACEBOOK</a></li>
+        <li><a href="https://twitter.com/PrinceSadiePCG">TWITTER</a></li>
+        <li><a href="https://github.com/princesadie">GITHUB</a></li>
+      </ul>
+    </nav>
+  <aside>
+    <div class="card-author">
+      <h1>PRINCE SADIE</h1>
+      <img class="profile-photo" src="../../imgs/profile.png" alt="Profile Photo">
+      <p class="description">Hi! I'm currently a student at Dev Bootcamp and this is my blog.</p>
+    </div>
+  </aside>
+  <section>
+    <div class="card-blog-post">
+      <h1>Grabbing in Ruby with ".grep"</h1>
+      <h2>January 10, 2016</h2>
+      <p>
+          Definition from the doc.
+      </p>
+      <p>
+          "Iterates the given block for each slice of <n> elements. If no block is given, returns an enumerator."
+      </p>
+      <p>
+          So when I was working on 5.6 Create Accountability Groups where we had to split an array of people into a groups of 5, 4, or 3 at the minimum, my initial solution was very very long. I had several counters and a large case statement. Take a look at my initial's giant blob of code below.
+      </p>
+      <pre><code>
+        def ag_creator(cohort)
+          size = cohort.size
+          ag = 1
+          cc = cohort[0...5]
+          if size > 0
+            noc = size / 5
+            rm = size % 5
+            if rm < 3
+              noc += 1
+            end
+          end
+          while noc > 0
+            case ag
+            when 1
+              cc = cohort[0...5]
+            when 2
+              cc = cohort[6...11]
+            when 3
+              cc = cohort[12...17]
+            when 4
+              cc = cohort[18...23]
+            when 5
+              cc = cohort[24...29]
+            when 6
+              cc = cohort[30...35]
+            when 7
+              cc = cohort[36...41]
+            when 8
+              cc = cohort[42...47]
+            when 9
+              cc = cohort[48...51]
+            when 10
+              cc = cohort[52...56]
+            end
+            puts "Accountability Group #{ag} members are: #{cc}."
+            noc -= 1
+            ag += 1
+          end
+        end
+
+        ag_creator(cohort)
+      </code></pre>
+      <p>
+          This solution somewhat worked and with a little more tweaking could've gotten the job done. I know it's very messy, it's a fixer-upper of a solution. This brings me to ".grep" and the refactored solution I ended up actually using.
+      </p>
+      <pre><code>
+        def ag(cohort)
+          i = 1
+          cohort.each_slice(4) do |a,b,c,d|
+            puts "Accountability Group #{i} members are #{[a,b,c,d]}"
+            i += 1
+          end
+        end
+
+        ag(cohort)
+      </code></pre>
+      <p>
+          This looks a lot better doesn't it? My ag method splits the cohort array into equal groups of 4. The ".each_slice" method basically takes the argument number of elements and returns an array. In this case it takes the first four, creates an array of them, and proceeds to the next four elements until there are none left. If there are fewer remaining elements than the argument number, then it'll put all remaining elements into the last array. Not sure if that all makes complete sense, but hopefully that gives you some kind of idea as to how I used ".each_slice".
+      </p>
+    </div>
+  </section>
+</body>
+</html>
