@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>What's a Class?</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Prince Sadie's GitHub.io site. Made during his time at Dev Bootcamp">
+	<meta name="author" content="Prince Sadie">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/blog-post.css">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/long.css">
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="../../index.html">home</a></li>
+			<li><a href="../../about.html">about</a></li>
+			<li><a href="#">projects</a></li>
+			<li><a href="#">resume</a></li>
+			<li><a href="../index.html">blog</a></li>
+			<li><a href="../../contact.html">contact</a></li>
+		</ul>
+	</nav>
+	<div class="main">
+		<div class="profile-pic">
+			<img src="http://www.derekyu.com/tigs/forums/tutorials/gmtut/gmtut-008.png">
+		</div>
+		<section id="about">
+				<div class="container">
+					<h1>WEEK 6</h1>
+					<h2><span class="orange">Classes in Ruby</span></h2>
+					<h3>JANUARY 16, 2016</h3>
+						<p>
+						  Definition from the doc.
+						</p>
+						<p>
+						  <b>Classes in Ruby are first-class objects---each is an instance of class <i>Class</i>.</b>
+						</p>
+						<p>
+						  I like to think of classes as blueprints from which I can create many objects can be modeled. For example, take a <i>Class Animal</i> with <i>@brain, @number_of_legs</i> as an instance variable and <i>move and still</i> as methods.
+						</p>
+						<pre>
+						Class Animal
+							def initialize(num_of_legs)
+								@brain = true
+								@number_of_legs = num_of_legs
+							end
+
+							def move
+							end
+
+							def still
+							end
+						end
+						</pre>
+						<p>
+						  I think of instance variables as attributes/characteristics that every object created from the class automatically gets. Think of methods as the actions that the object can do, in this case our <i>Animal</i> can move and breathe.
+						</p>
+						<pre>
+						Class Animal
+							def initialize(num_of_legs)
+								@brain = true
+								@number_of_legs = num_of_legs
+							end
+
+							def move
+							end
+
+							def breathe
+							end
+						end
+
+						Class Human < Animal
+							def initialize(num_of_legs)
+								@brain = true
+								@number_of_legs = num_of_legs
+							end
+						end
+
+						Class Pet < Animal
+							def initialize(num_of_legs)
+								@brain = true
+								@number_of_legs = num_of_legs
+							end
+						end
+
+						person = Human.new(2)
+						dog = Pet.new(4)
+						snake = Pet.new(0)
+						</pre>
+						<p>
+						  The above <i>Class Human</i> is a subclass of <i>Animal</i> and the line <i>person = Human.new(2)</i> would create a new object from <i>Human</i> with 2 legs.
+						</p>
+						<p>
+						  Instance variables allow to use their values throughout the class unlike local variables. If we were to use local instead of instance, it'd look something like below.
+						</p>
+						<pre>
+						Class Animal
+							def move(num_of_legs)
+								legs = num_of_legs #some_number
+								has_brain = brain #boolean
+							end
+
+							def breathe(num_of_legs, brain)
+								legs = num_of_legs #some_number
+								has_brain = brain #boolean
+							end
+						end
+						</pre>
+				</div>
+		</section>
+	</div>
+</body>
+</html>
