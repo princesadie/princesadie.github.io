@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>ENUMERABLES ".each_slice"</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Prince Sadie's GitHub.io site. Made during his time at Dev Bootcamp">
+	<meta name="author" content="Prince Sadie">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/blog-post.css">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/long.css">
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="../../index.html">home</a></li>
+			<li><a href="../../about.html">about</a></li>
+			<li><a href="#">projects</a></li>
+			<li><a href="#">resume</a></li>
+			<li><a href="../index.html">blog</a></li>
+			<li><a href="../../contact.html">contact</a></li>
+		</ul>
+	</nav>
+	<div class="main">
+		<div class="profile-pic">
+			<img src="http://www.social-media-x.co.uk/wp-content/uploads/2013/12/icon-hashtag.png">
+		</div>
+		<section id="about">
+				<div class="container">
+					<h1>WEEK 5</h1>
+					<h2><span class="orange">".each_slice"</span></h2>
+					<h3>JANUARY 10, 2016</h3>
+					<p>
+					          Definition from the doc.
+					      </p>
+					      <p>
+					          "Iterates the given block for each slice of <n> elements. If no block is given, returns an enumerator."
+					      </p>
+					      <p>
+					          So when I was working on 5.6 Create Accountability Groups where we had to split an array of people into a groups of 5, 4, or 3 at the minimum, my initial solution was very very long. I had several counters and a large case statement. Take a look at my initial's giant blob of code below.
+					      </p>
+					      <pre>
+					        def ag_creator(cohort)
+					          size = cohort.size
+					          ag = 1
+					          cc = cohort[0...5]
+					          if size > 0
+					            noc = size / 5
+					            rm = size % 5
+					            if rm < 3
+					              noc += 1
+					            end
+					          end
+					          while noc > 0
+					            case ag
+					            when 1
+					              cc = cohort[0...5]
+					            when 2
+					              cc = cohort[6...11]
+					            when 3
+					              cc = cohort[12...17]
+					            when 4
+					              cc = cohort[18...23]
+					            when 5
+					              cc = cohort[24...29]
+					            when 6
+					              cc = cohort[30...35]
+					            when 7
+					              cc = cohort[36...41]
+					            when 8
+					              cc = cohort[42...47]
+					            when 9
+					              cc = cohort[48...51]
+					            when 10
+					              cc = cohort[52...56]
+					            end
+					            puts "Accountability Group #{ag} members are: #{cc}."
+					            noc -= 1
+					            ag += 1
+					          end
+					        end
+
+					        ag_creator(cohort)
+					      </pre>
+					      <p>
+					          This solution somewhat worked and with a little more tweaking could've gotten the job done. I know it's very messy, it's a fixer-upper of a solution. This brings me to ".grep" and the refactored solution I ended up actually using.
+					      </p>
+					      <pre>
+					        def ag(cohort)
+					          i = 1
+					          cohort.each_slice(4) do |a,b,c,d|
+					            puts "Accountability Group #{i} members are #{[a,b,c,d]}"
+					            i += 1
+					          end
+					        end
+
+					        ag(cohort)
+					      </pre>
+					      <p>
+					          This looks a lot better doesn't it? My ag method splits the cohort array into equal groups of 4. The ".each_slice" method basically takes the argument number of elements and returns an array. In this case it takes the first four, creates an array of them, and proceeds to the next four elements until there are none left. If there are fewer remaining elements than the argument number, then it'll put all remaining elements into the last array. Not sure if that all makes complete sense, but hopefully that gives you some kind of idea as to how I used ".each_slice".
+					      </p>
+				</div>
+		</section>
+	</div>
+</body>
+</html>
