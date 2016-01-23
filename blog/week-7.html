@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Looping in Ruby & Javascript</title>
+	<metadata charset="UTF-8">
+	<metadata name="description" content="Prince Sadie's GitHub Site created during Dev Bootcamp">
+	<metadata name="author" content="Prince Sadie">
+
+	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="http://princesadie.github.io">HOME</a></li>
+			<li><a href="http://princesadie.github.io/about.html">ABOUT</a></li>
+			<li><a href="http://princesadie.github.io/projects/index.html">PROJECTS</a></li>
+			<li><a href="http://princesadie.github.io/blog/index.html" class="active">BLOG</a></li>
+			<li><a href="http://princesadie.github.io/contact.html">CONTACT</a></li>
+		</ul>
+	</nav>
+
+	<section>
+		<div class="photo">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png">
+		</div>
+		<div class="card card-5">
+			<div class="post-content">
+				<h1>WEEK 7</h1>
+				<h2 class="orange">LOOPING IN RB & JS</h2>
+				<h3>JANUARY 23, 2016</h3>
+				<h4>A quick review...</h4>
+				<p>
+					Looping in programming is invoking a series of instructions or actions repeatedly until a certain condition is met. In general it can be seen like this, data is provided, this data is modified or used/acted upon in some way, and then a condition is checked. If the condition is met, then the loop ends there. If the condition is not met, then the loop repeats. What if the condition is never met and the loop keeps on repeating? Over and over and over and over... You just created an infinite loop. An infinite loop, as the name suggests, is a never ending loop, and is something you never want to create. It'll probably go on looping until your system gives up and calls it quits by crashing.
+				</p>
+				<h4>In Ruby...</h4>
+				<p>
+					Ruby has quite a few methods we can easily use to loop. For instance, if I wanted to loop through an array of names and print those names out on the screen, I could do it using the following snippet.
+				</p>
+				<code><pre>
+	list_of_names = ['Prince','Michelle','Ronin','Saya','John','Nixon','Jim']
+
+	list_of_names.each do | names |
+		puts names
+	end
+
+	=> 'Prince'
+	=> 'Michelle'
+	=> 'Ronin'
+	=> 'Saya'
+	...so on...
+				</pre></code>
+				<p>
+					A super easy solution to a simple task. But how about in Javascript?
+				</p>
+				<h4>In Javascript...</h4>
+				<p>
+					Javascript is still quite new to me at this point so forgive any missteps after this point. Looping in Javascript isn't quite so simple as in Ruby. There are some built-in functions that can assist, but I'll demonstrate the way I've learned it. In Ruby the '.each' method easily steps through each element in the given array and then performs the action in the proceeding block. In Javascript we've got use a 'for' loop. A 'for' loop looks like the snippet below. 
+				</p>
+				<code><pre>
+	for ([initialization]; [condition]; [final-expression])
+			statement
+				</pre></code>
+				<p>
+					The <code>[initialization]</code> part is generally where a counter variable is initialized. The <code>[condition]</code> part is what's evaluated before each loop occurs. If <code>[condition]</code> returns true, then the loop proceeds and <code>statement</code> is executed. If <code>[condition]</code> returns false, then the loop is not executed and we skip to the next expression in the program.
+				</p>
+				<p>
+					So here's what our Ruby example above would look like in Javascript.
+				</p>
+				<code><pre>
+	var list_of_names = ['Prince','Michelle','Ronin','Saya','John','Nixon','Jim'];
+
+	for (var counter = 0; counter < list_of_names.length; counter++) {
+		console.log(list_of_names[counter]);
+	}
+				</pre></code>
+				<h4>In plain english...</h4>
+				<p>
+					The <code>var counter = 0</code> initializes our counter variable.
+				</p>
+				<p>
+					<code>counter < list_of_names.length</code> checks to see if counter is less the length of our array. If it is, then we can proceed to the <code>statement</code> which in this case is <code>console.log(list_of_names[counter])</code>.
+				</p>
+				<p>
+					<code>counter++</code> adds one to our counter after every iteration. Once this counter is greater than the length of <code>list_of_names</code>, then our <code>condition</code> is no longer true and the loop is terminated.
+				</p>
+				<p>
+					Here's what my pseudocode would look like.
+				</p>
+				<code><pre>
+	CREATE array of names 'list_of_names'
+	START for loop
+		INITIALIZATION
+			CREATE variable 'counter' equal to 0
+		CONDITION
+			CHECK IF 'counter' is less than length of 'list_of_names'
+		FINAL-EXPRESSION
+			ADD one to 'counter'
+		STATEMENT
+			PRINT each element of 'list_of_names' based on 'counter'
+				</pre></code>
+
+				<p>
+					Hopefully that helped in some way! Take a look at the MDN on <code>for loops</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">here</a>.
+				</p>
+				<img src="../imgs/week-7.png">
+			</div>
+		</div>
+	</section>
+
+</body>
+<footer>
+</footer>
