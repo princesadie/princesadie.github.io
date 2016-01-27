@@ -22,7 +22,7 @@
 		<div class="photo">
 			<img src="http://www.social-media-x.co.uk/wp-content/uploads/2013/12/icon-hashtag.png">
 		</div>
-		<div class="card card-2">
+		<div class="card">
 			<div class="post-content">
 				<h1>WEEK 4</h1>
 				<h2 class="orange">ARRAYS AND HASHES</h2>
@@ -31,19 +31,19 @@
 			    <p>This post is going to talk about arrays and hashes, what they are and how they differ. My understanding of this topic is surface level at best, but I'll try to convey what knowledge I do know and provide resources for further reading at the end.</p>
 			    <p>Both arrays and hashes are containers of information. Arrays can be thought of as a simple list that go in a particular order. Each entry counts up an index starting from 0. Here's an example of an array:</p>
 			    <pre><code>
-			      my_first_array = ["dog","cat","bird","whale"]
-			      think of it like this...
-			      my_first_array = [0,1,2,3]
+	      my_first_array = ["dog","cat","bird","whale"]
+	      think of it like this...
+	      my_first_array = [0,1,2,3]
 			    </code></pre>
 			    <p>The "dog" entry is index 0 and corresponds to my_first_array[0], "cat" is index 1 and corresponds to my_first_array[1], and so on... If we were to add another entry to this array then that entry would be index 4. Programmers generally begin counting from zero. Arrays can hold pretty much any data type like strings, integers, floats, and even other arrays.</p>
 			    <p>Hashes on the other hand can be thought of as pairs of information called key-value pairs with each pair having a name (key) and a value. Here's an example of a hash:</p>
 			    <pre><code>
-			      my_first_hash = {
-			      :key0 = "dog"
-			      :key1 = "cat"
-			      :marko = "bird"
-			      :key3 = "whale"
-			    }
+	      my_first_hash = {
+	      :key0 = "dog"
+	      :key1 = "cat"
+	      :marko = "bird"
+	      :key3 = "whale"
+	    }
 			    </code></pre>
 			    <p>Unlike arrays in which the values correspond to index numbers, hashes have keys that correspond to values. The keys can be anything that has relevant meaning to the programmer. I'm fairly certain that that's the point of using hashes. It's a way to create, access, and remember information easily. Values can be accessed by calling their key.</p>
 			    <pre><code>
