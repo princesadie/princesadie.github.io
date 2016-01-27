@@ -122,6 +122,10 @@ pre {
 	color: #5C6BC0;
 }
 
+.card a:hover {
+	opacity: 0.7;
+}
+
 .card ul {
 }
 
