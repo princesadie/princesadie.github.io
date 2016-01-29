@@ -1,5 +1,5 @@
 h1 {
-	padding: 10px 10px 0 10px;
+	padding: 10px 10px 10px 10px;
 	margin: 0;
 }
 
@@ -12,7 +12,7 @@ pre {
     white-space: pre-wrap;
     background: #f6f6f6;
 	padding: 10px;
-	margin: 10px 0 0 0;
+	margin: 10px 0 30px 0;
     border-left: none;
     border-right: none;
 }
@@ -23,13 +23,17 @@ footer {
 	width: 100%;
 }
 
+.clear {
+	clear: both;
+}
+
 .card-row {
 	width: 100%;
 	margin: 150px auto;
 	padding: 0;
 }
 
-.card-left {
+/*.card-left {
 	width: 350px;
 	height: 100%;
 	overflow: auto;
@@ -57,4 +61,93 @@ footer {
 	margin: 0 50px 0 0;
 	background-color: #fff;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}*/
+/*=======================================*/
+.transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
+
+.card-left {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    height: 100px;
+	float: left;
+	margin: 0 0 0 50px;
+    overflow: hidden;
+    width: 350px;
+}
+
+.card-left:hover {
+    height: 450px;
+    width: 350px;
+}
+
+.card-left:hover h1 {
+    background-color: #3487f7;
+    color: #fff;
+}
+
+.card-center {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    height: 100px;
+	float: center;
+	margin: 0 auto 0 auto;
+    overflow: hidden;
+    width: 350px;
+}
+
+.card-center:hover {
+    height: 450px;
+    width: 350px;
+}
+
+.card-center:hover h1 {
+    background-color: #3487f7;
+    color: #fff;
+}
+
+.card-right {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    height: 100px;
+	float: right;
+	margin: 0 50px 0 0;
+    overflow: hidden;
+    width: 350px;
+}
+
+.card-right:hover {
+    height: 450px;
+    width: 350px;
+}
+
+.card-right:hover h1 {
+    background-color: #3487f7;
+    color: #fff;
+}
+
+.sauce-container {
+	display: block;
+	margin-top: 500px;
+	width: 100px;
+	margin: 0 auto;
+}
+
+.sauce {
+	padding: 10px 20px 10px 20px;
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid #3487f7;
+    border-radius: 2px;
+    color: #3487f7;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.sauce:hover {
+	background-color: #3487f7;
+	color: #fff;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
