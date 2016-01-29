@@ -115,7 +115,7 @@ pre {
 
 .card p {
 	padding: 0 50px 0 50px;
-	text-indent: 50px;
+	text-indent: 35px;
 }
 
 .card a {
@@ -154,4 +154,9 @@ pre {
 
 .black {
 	color: #000;
+}
+
+.squeeze {
+	padding: 0 100px 0 100px;
+	background-color: #f6f6f6;
 }
