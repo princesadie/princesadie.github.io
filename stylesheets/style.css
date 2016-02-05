@@ -91,14 +91,14 @@ pre {
 	margin-bottom: -10px;
 	padding-top: 140px;
 	font-size: 64px;
-	animation: fadein 6s;
+	animation: fadein 5s;
 }
 
 .card h2 {
 	text-align: center;
 	margin: 0;
 	font-size: 64px;
-	animation: fadein 8s;
+	animation: fadein 6s;
 }
 
 .card h3 {
